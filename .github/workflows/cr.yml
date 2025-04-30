@@ -16,6 +16,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          # optional
+          OPENAI_API_ENDPOINT: https://api.bianxie.ai/v1
           LANGUAGE: Korean
           PROMPT: please review my codes
