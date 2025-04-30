@@ -51,7 +51,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: GPT-4 Code Review
-        uses: your-username/gpt4-code-review-action@v1
+        uses: aqibansari2/code-review-automated@v0.09
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
