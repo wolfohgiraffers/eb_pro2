@@ -12,12 +12,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: anc95/ChatGPT-CodeReview@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          # optional
-          MODEL: gpt-4.1
-          OPENAI_API_ENDPOINT: https://api.openai.com/v1
-          LANGUAGE: Korean
-          PROMPT: 한국말로 pr에 대한 코드 리뷰해줘
+    - name: AI Code Review
+      uses: AleksandrFurmenkovOfficial/ai-code-review@v0.8
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        owner: ${{ github.repository_owner }}
+        repo: ${{ github.event.repository.name }}
+        pr_number: ${{ github.event.number }}
+        ai_provider: 'anthropic'
+        anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+        anthropic_model: 'claude-3-7-sonnet-20250219'
