@@ -10,8 +10,8 @@ on:
     branches:
       - "main"
       - "dev/feature/*"
-#  pull_request:
-#    types: [ opened, reopened, synchronize ]
+  pull_request:
+    types: [ opened, reopened, synchronize ]
 
 jobs:
   build:
