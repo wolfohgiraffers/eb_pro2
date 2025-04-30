@@ -6,10 +6,10 @@ permissions:
   pull-requests: write
 
 on:
-  push:
-    branches:
-      - "main"
-      - "dev/feature/*"
+#  push:
+#    branches:
+#      - "main"
+#      - "dev/feature/*"
   pull_request:
     types: [ opened, reopened, synchronize ]
 
