@@ -19,13 +19,12 @@ public class MenuController {
 
     @GetMapping("health")
     public String healthCheck() {
-        return "eb_proj is fine! health check 내용 수정, 어떻게 바꾸라는 건지 코드리뷰를 제대로 달아줘!";
+        return "eb_pro is online and healthy";
     }
 
     @GetMapping("menus/{menuCode}")
     public MenuDTO findMenuByMenuCode(@PathVariable("menuCode") int menuCode) {
-        MenuDTO returnMenu = menuService.findMenuByMenuCode(menuCode);
-        return returnMenu;
+        return menuService.findMenuByMenuCode(menuCode);
     }
 }
 
