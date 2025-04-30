@@ -4,14 +4,17 @@ name: ela-prac-service
 permissions:
   contents: read
   pull-requests: write
-
+#
+#on:
+#  push:
+#    branches:
+#      - "main"
+#      - "dev/feature/*"
+#  pull_request:
+#    types: [ opened, reopened, synchronize ]
 on:
-  push:
-    branches:
-      - "main"
-      - "dev/feature/*"
   pull_request:
-    types: [ opened, reopened, synchronize ]
+    types: [opened, synchronize]
 
 jobs:
   build:
@@ -45,6 +48,7 @@ jobs:
         run: echo "CurrentTime=${{steps.current-time.outputs.formattedTime}}"
         shell: bash
   review:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
