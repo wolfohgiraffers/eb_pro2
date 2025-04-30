@@ -47,11 +47,12 @@ jobs:
   review:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
-
-      - name: GPT-4 Code Review
-        uses: aqibansari2/code-review-automated@v0.09
-        with:
+      - name: OpenAI PR Review
+        uses: cawcaw253/ai-review-action@latest
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          LANGUAGE: "korean"
+          MODEL: "gpt-3.5-turbo"
