@@ -19,11 +19,15 @@ public class MenuController {
 
     @GetMapping("health")
     public String healthCheck() {
+        
+        /* 반환 문자열 수정 */
         return "eb_pro is online and healthy";
     }
 
     @GetMapping("menus/{menuCode}")
     public MenuDTO findMenuByMenuCode(@PathVariable("menuCode") int menuCode) {
+        
+        /* 한줄 코드로 수정 */
         return menuService.findMenuByMenuCode(menuCode);
     }
 }
