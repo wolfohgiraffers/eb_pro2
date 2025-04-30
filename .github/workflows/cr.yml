@@ -1,16 +1,17 @@
-name: eb-proj-service
+name: ela-prac-service
 
-# eb_prac!
+# cr.yml 이후 pr
 permissions:
   contents: read
   pull-requests: write
 
 on:
-  pull_request:
-    types: [ opened, reopened, synchronize ]
   push:
     branches:
       - "main"
+      - "dev/feature/*"
+#  pull_request:
+#    types: [ opened, reopened, synchronize ]
 
 jobs:
   build:
@@ -28,10 +29,6 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
         shell: bash
-      ##############################################################
-      # 이후 이 부분은 envsubst가 추가될 예정
-      ##############################################################
-
 
       - name: Build with Gradle
         run: ./gradlew clean build -x test
@@ -47,16 +44,21 @@ jobs:
       - name: Show Current Time
         run: echo "CurrentTime=${{steps.current-time.outputs.formattedTime}}"
         shell: bash
-
+  review:
+    runs-on: ubuntu-latest
+    steps:
       - name: ChatGPT codeReviewer
         uses: anc95/ChatGPT-CodeReview@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          LANGUAGE: Korean
+
+          # Optional
+          LANGUAGE: Korean  # 한국어로 변경!!@@
           OPENAI_API_ENDPOINT: https://api.openai.com/v1
           MODEL: gpt-3.5-turbo # https://platform.openai.com/docs/models
-          PROMPT: Please check if there are any confusions or irregularities in the following code diff
+          # PROMPT: Please check if there are any confusions or irregularities in the following code diff
+          PROMPT: 기존 코드와의 차이점을 확인하고 관련된 코드 리뷰를 작성해줘
           top_p: 1 # https://platform.openai.com/docs/api-reference/chat/create#chat/create-top_p
           temperature: 1 # https://platform.openai.com/docs/api-reference/chat/create#chat/create-temperature
           max_tokens: 10000
