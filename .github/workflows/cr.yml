@@ -17,5 +17,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           # optional
+          MODEL:
+          OPENAI_API_ENDPOINT: https://api.openai.com/v1
           LANGUAGE: Korean
-          PROMPT:
+          PROMPT: 한국말로 pr에 대한 코드 리뷰해줘
