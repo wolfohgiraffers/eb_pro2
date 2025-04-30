@@ -17,7 +17,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           # optional
-          MODEL: gpt-4o
+          MODEL: o3-mini # https://platform.openai.com/docs/models
           OPENAI_API_ENDPOINT: https://api.openai.com/v1
           LANGUAGE: Korean
           PROMPT: |
