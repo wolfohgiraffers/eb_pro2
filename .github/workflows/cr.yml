@@ -20,4 +20,4 @@ jobs:
           MODEL:
           OPENAI_API_ENDPOINT: https://api.openai.com/v1
           LANGUAGE: Korean
-          PROMPT: 한국말로 pr에 대한 코드 리뷰해줘
+          PROMPT: 한국말로 pr에 대한 코드 리뷰해줘!
