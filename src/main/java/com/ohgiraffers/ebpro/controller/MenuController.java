@@ -27,7 +27,7 @@ public class MenuController {
     @GetMapping("menus/{menuCode}")
     public MenuDTO findMenuByMenuCode(@PathVariable("menuCode") int menuCode) {
         
-        /* 한줄 코드로 수정(for checking github actions!) */
+        /* 한줄 코드로 수정(for checking github actions!!) */
         return menuService.findMenuByMenuCode(menuCode);
     }
 }
