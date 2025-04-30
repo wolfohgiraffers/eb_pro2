@@ -19,7 +19,7 @@ public class MenuController {
 
     @GetMapping("health")
     public String healthCheck() {
-        return "eb_proj is fine! dev/feature/last cr!!! for korean";
+        return "eb_proj is fine! dev/feature/last cr!!! for korean last";
     }
 
     @GetMapping("menus/{menuCode}")
