@@ -44,9 +44,7 @@ jobs:
       - name: Show Current Time
         run: echo "CurrentTime=${{steps.current-time.outputs.formattedTime}}"
         shell: bash
-  review:
-    runs-on: ubuntu-latest
-    steps:
+
       - name: ChatGPT codeReviewer
         uses: anc95/ChatGPT-CodeReview@main
         env:
