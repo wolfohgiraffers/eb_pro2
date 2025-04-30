@@ -18,7 +18,7 @@ name: Code Review
             OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
             # Optional
             OPENAI_API_ENDPOINT: https://api.openai.com/v1
-            LANGUAGE: "korean"
+            LANGUAGE: `Korean`
             MODEL: "gpt-3.5-turbo"
             PROMPT: 'Please check if there are any confusions or irregularities in the following code diff:'
             top_p: 1 # https://platform.openai.com/docs/api-reference/chat/create#chat/create-top_p
