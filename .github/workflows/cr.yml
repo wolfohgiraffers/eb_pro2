@@ -18,3 +18,4 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           LANGUAGE: "korean"
           MODEL: "gpt-3.5-turbo"
+          INCLUDE_PATTERNS: 'src/*'
