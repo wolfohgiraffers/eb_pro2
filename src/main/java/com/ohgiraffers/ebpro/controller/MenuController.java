@@ -27,7 +27,7 @@ public class MenuController {
         return menuService.findMenuByMenuCode(menuCode);
     }
     
-    /* 라스트 댄스 */
+    /* gpt-4o로 다시 한번 */
 }
 
 
