@@ -26,6 +26,8 @@ public class MenuController {
     public MenuDTO findMenuByMenuCode(@PathVariable("menuCode") int menuCode) {
         return menuService.findMenuByMenuCode(menuCode);
     }
+    
+    /* gpt-4o로 다시 한번 */
 }
 
 
